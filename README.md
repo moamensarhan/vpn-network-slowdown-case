@@ -3,7 +3,7 @@ Case Study: Network Slowdown Caused by VPN Routing
 ---
 Overview
 
-Browsing performance degraded suddenly despite stable Wi-Fi baseline conditions. Investigation identified an active VPN connection routing traffic through a geographically distant server, introducing increased latency and degrading web performance.
+Browsing became significantly slower despite Wi-Fi signal strength remaining consistent with prior normal operation. Investigation revealed an active VPN connection routing traffic through a geographically distant server, increasing latency and affecting page load times.
 
 ---
 
@@ -41,34 +41,30 @@ Determined issue was system-wide
 
 Investigation
 
-Opened Resource Monitor → Network tab to inspect process-level network activity.
+The slowdown was observed across multiple browsers on the desktop. A separate device (mobile phone) on the same Wi-Fi network functioned normally, indicating the issue was isolated to the PC rather than the network itself.
 
-Observed sustained ~13 Mbps upload and download traffic from ProtonVPN.
+Resource Monitor was opened to inspect process-level network activity.
 
-This level of continuous throughput was inconsistent with normal browsing behavior.
+Resource Monitor → Network tab showed sustained ~13 Mbps upload and download activity from ProtonVPN, indicating continuous tunnel traffic independent of active browsing behavior.
 
-VPN had auto-connected to a geographically distant server under free-tier restrictions.
+Further inspection confirmed the VPN had auto-connected to a geographically distant server under free-tier restrictions.
 
 ---
 
 Root Cause
 
-An active VPN connection to a distant server introduced additional routing overhead and increased latency, resulting in degraded browsing performance.
+Traffic was being routed through a distant VPN endpoint, increasing latency and negatively impacting web responsiveness.
 
 ---
 
 Resolution
 
-Disabled ProtonVPN.
-
-Direct ISP routing was restored.
+ProtonVPN was disabled, as switching to a geographically closer server was unavailable under the free-tier plan.
 
 ---
 
 Verification
 
-Browsing speed returned to expected baseline
-
-Pages loaded normally
+Browsing performance returned to expected baseline levels, and pages loaded normally without delay.
 
 No further connectivity issues observed
