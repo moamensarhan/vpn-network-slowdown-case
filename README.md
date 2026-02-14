@@ -45,9 +45,11 @@ The slowdown was observed across multiple browsers on the desktop. A separate de
 
 Resource Monitor was opened to inspect process-level network activity.
 
-Resource Monitor → Network tab showed sustained ~13 Mbps upload and download activity from ProtonVPN, indicating continuous tunnel traffic independent of active browsing behavior.
+Resource Monitor showed sustained network activity from ProtonVPN, fluctuating between approximately 10–15 Mbps in both directions. 
 
 Further inspection confirmed the VPN had auto-connected to a geographically distant server under free-tier restrictions.
+
+<img width="1127" height="148" alt="vpn-bandwidth-usage" src="https://github.com/user-attachments/assets/34b749f6-85ce-47d5-a427-79267c19f2bf" />
 
 ---
 
